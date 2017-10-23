@@ -10,10 +10,11 @@
 		CA7736001F9E2AA500C88499 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7735FF1F9E2AA500C88499 /* AppDelegate.swift */; };
 		CA7736021F9E2AA500C88499 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7736011F9E2AA500C88499 /* ViewController.swift */; };
 		CA7736051F9E2AA500C88499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7736031F9E2AA500C88499 /* Main.storyboard */; };
-		CA7736071F9E2AA500C88499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA7736061F9E2AA500C88499 /* Assets.xcassets */; };
 		CA77360A1F9E2AA500C88499 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7736081F9E2AA500C88499 /* LaunchScreen.storyboard */; };
 		CA7736151F9E2AA600C88499 /* homeworksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7736141F9E2AA600C88499 /* homeworksTests.swift */; };
 		CA7736201F9E2AA600C88499 /* homeworksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA77361F1F9E2AA600C88499 /* homeworksUITests.swift */; };
+		CA77362E1F9E39AE00C88499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA77362D1F9E39AE00C88499 /* Assets.xcassets */; };
+		CA7736321F9E3B3400C88499 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7736311F9E3B3400C88499 /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 		CA7735FF1F9E2AA500C88499 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA7736011F9E2AA500C88499 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CA7736041F9E2AA500C88499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CA7736061F9E2AA500C88499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA7736091F9E2AA500C88499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA77360B1F9E2AA500C88499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA7736101F9E2AA600C88499 /* homeworksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = homeworksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +47,8 @@
 		CA77361B1F9E2AA600C88499 /* homeworksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = homeworksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA77361F1F9E2AA600C88499 /* homeworksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeworksUITests.swift; sourceTree = "<group>"; };
 		CA7736211F9E2AA600C88499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA77362D1F9E39AE00C88499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA7736311F9E3B3400C88499 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +101,10 @@
 			children = (
 				CA7735FF1F9E2AA500C88499 /* AppDelegate.swift */,
 				CA7736011F9E2AA500C88499 /* ViewController.swift */,
+				CA7736311F9E3B3400C88499 /* Login.storyboard */,
 				CA7736031F9E2AA500C88499 /* Main.storyboard */,
-				CA7736061F9E2AA500C88499 /* Assets.xcassets */,
 				CA7736081F9E2AA500C88499 /* LaunchScreen.storyboard */,
+				CA77362D1F9E39AE00C88499 /* Assets.xcassets */,
 				CA77360B1F9E2AA500C88499 /* Info.plist */,
 			);
 			path = homeworks;
@@ -232,8 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA7736321F9E3B3400C88499 /* Login.storyboard in Resources */,
 				CA77360A1F9E2AA500C88499 /* LaunchScreen.storyboard in Resources */,
-				CA7736071F9E2AA500C88499 /* Assets.xcassets in Resources */,
+				CA77362E1F9E39AE00C88499 /* Assets.xcassets in Resources */,
 				CA7736051F9E2AA500C88499 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
