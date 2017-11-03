@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import LineSDK
+import FacebookCore
+import FacebookLogin
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        Twitter.sharedInstance().start(withConsumerKey: "qJBHprHIJWomgJRzUiWxQs6gs", consumerSecret: "wVcWUDftXhBYG5NWgZ2oRXtcwjYD2fabf2fi3c3IBYt25pvR02")
         return true
+    }
+    
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        if url.absoluteString.pregMatche(pattern: "fb1744349295870006://*"){
+            return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+        }else if url.absoluteString.pregMatche(pattern: "twitterkit-qjbhprhijwomgjrzuiwxqs6gs://*"){
+            return Twitter.sharedInstance().application(app, open: url, options: options)
+        }else{
+            LogManager.errorPrint(massege: "AppDelegateでのurl遷移失敗")
+            print(url)
+            return true
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

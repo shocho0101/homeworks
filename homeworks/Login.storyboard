@@ -1,28 +1,479 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kH3-qU-cpJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AUBREY1__.TTF">
+            <string>Aubrey</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Top View Controller-->
         <scene sceneID="r7W-Ex-PI1">
             <objects>
-                <viewController id="yCY-sX-YDl" sceneMemberID="viewController">
+                <viewController id="yCY-sX-YDl" customClass="TopViewController" customModule="homeworks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1LU-v5-ri3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wU3-2N-T7p" customClass="CustomButton" customModule="homeworks" customModuleProvider="target">
+                                <rect key="frame" x="20" y="577" width="335" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Ry8-gX-hle"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="ログイン">
+                                    <color key="titleColor" red="0.92156862750000001" green="0.3803921569" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.92156862750000001" green="0.3803921569" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="VZB-vc-xGl" kind="show" id="6OQ-Yn-qBc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PL5-bb-D7j" customClass="CustomButton" customModule="homeworks" customModuleProvider="target">
+                                <rect key="frame" x="20" y="517" width="335" height="45"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.3803921569" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="TGa-nE-EeL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="新規登録">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Q4B-PY-ehJ" kind="show" id="y2v-fZ-gsm"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEA-Gn-xYR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="472"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H3Z-0K-AdB">
+                                        <rect key="frame" x="105" y="159" width="165.5" height="155"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ロゴ" translatesAutoresizingMaskIntoConstraints="NO" id="VoJ-yH-7uK">
+                                                <rect key="frame" x="23" y="0.0" width="120" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="VoJ-yH-7uK" secondAttribute="height" multiplier="1:1" id="avO-vm-uxh"/>
+                                                    <constraint firstAttribute="height" constant="120" id="ctf-C5-NIZ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="homeworks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVw-YQ-Ciu">
+                                                <rect key="frame" x="0.0" y="120" width="165.5" height="35"/>
+                                                <fontDescription key="fontDescription" name="Aubrey" family="Aubrey" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.3803921569" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="H3Z-0K-AdB" firstAttribute="centerY" secondItem="BEA-Gn-xYR" secondAttribute="centerY" id="chw-dT-L5h"/>
+                                    <constraint firstItem="H3Z-0K-AdB" firstAttribute="centerX" secondItem="BEA-Gn-xYR" secondAttribute="centerX" id="hBo-AW-NN3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sch-pD-acB" firstAttribute="bottom" secondItem="wU3-2N-T7p" secondAttribute="bottom" constant="45" id="0nN-Cf-SEz"/>
+                            <constraint firstItem="BEA-Gn-xYR" firstAttribute="leading" secondItem="Sch-pD-acB" secondAttribute="leading" id="7PW-kR-Fhp"/>
+                            <constraint firstItem="PL5-bb-D7j" firstAttribute="leading" secondItem="Sch-pD-acB" secondAttribute="leading" constant="20" id="8wM-Zl-avO"/>
+                            <constraint firstItem="Sch-pD-acB" firstAttribute="trailing" secondItem="wU3-2N-T7p" secondAttribute="trailing" constant="20" id="DmR-Bw-b8T"/>
+                            <constraint firstItem="Sch-pD-acB" firstAttribute="trailing" secondItem="BEA-Gn-xYR" secondAttribute="trailing" id="GCQ-SI-P4Y"/>
+                            <constraint firstItem="wU3-2N-T7p" firstAttribute="top" secondItem="PL5-bb-D7j" secondAttribute="bottom" constant="15" id="IiU-TU-Wfb"/>
+                            <constraint firstItem="Sch-pD-acB" firstAttribute="trailing" secondItem="PL5-bb-D7j" secondAttribute="trailing" constant="20" id="TvQ-x1-KXC"/>
+                            <constraint firstItem="wU3-2N-T7p" firstAttribute="leading" secondItem="Sch-pD-acB" secondAttribute="leading" constant="20" id="b4t-B1-HXQ"/>
+                            <constraint firstItem="BEA-Gn-xYR" firstAttribute="top" secondItem="1LU-v5-ri3" secondAttribute="top" id="lwV-KL-rJ4"/>
+                            <constraint firstItem="PL5-bb-D7j" firstAttribute="top" secondItem="BEA-Gn-xYR" secondAttribute="bottom" constant="45" id="rD7-oU-5y0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Sch-pD-acB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hbb-Zf-pnG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXC-yn-f7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="-345"/>
+            <point key="canvasLocation" x="436" y="-345.87706146926541"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="s4G-IQ-1SG">
+            <objects>
+                <viewController id="Q4B-PY-ehJ" customClass="SignInViewController" customModule="homeworks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hzt-lx-pCQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cx0-w0-Ufr" customClass="CustomButton" customModule="homeworks" customModuleProvider="target">
+                                <rect key="frame" x="20" y="577" width="335" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="elo-uj-mld"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="戻る">
+                                    <color key="titleColor" red="0.92156862750000001" green="0.3803921569" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.92156862750000001" green="0.3803921569" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="back" destination="Q4B-PY-ehJ" eventType="touchUpInside" id="tfg-Qm-GIf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新規登録" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZa-Ew-Vle">
+                                <rect key="frame" x="130.5" y="150" width="114" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.92156862750000001" green="0.3803921569" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16V-Lb-Q2M" customClass="CustomButton" customModule="homeworks" customModuleProvider="target">
+                                <rect key="frame" x="20" y="213.5" width="335" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.76470588235294112" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="fVK-v9-qQn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="LINEで新規登録">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="line" destination="Q4B-PY-ehJ" eventType="touchUpInside" id="ah8-k2-sDE"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="0wm-20-yqx">
+                                <rect key="frame" x="30" y="214" width="44.5" height="44.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0wm-20-yqx" secondAttribute="height" multiplier="1:1" id="S3h-Bv-eGs"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wss-f5-AYR" customClass="CustomButton" customModule="homeworks" customModuleProvider="target">
+                                <rect key="frame" x="20" y="273.5" width="335" height="45"/>
+                                <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="TBQ-e5-t9p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Facebookで新規登録">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="facebook" destination="Q4B-PY-ehJ" eventType="touchUpInside" id="tbZ-Bg-LoH"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="jcx-yy-pXh">
+                                <rect key="frame" x="35" y="280.5" width="31" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jcx-yy-pXh" secondAttribute="height" multiplier="1:1" id="jdP-C9-Avy"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNF-NR-kDQ" customClass="CustomButton" customModule="homeworks" customModuleProvider="target">
+                                <rect key="frame" x="20" y="333.5" width="335" height="45"/>
+                                <color key="backgroundColor" red="0.33333333333333331" green="0.67450980392156867" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="kDY-mJ-V6X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Twitterで新規登録">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="twitter" destination="Q4B-PY-ehJ" eventType="touchUpInside" id="boZ-2h-W0z"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="5oM-aR-7RA">
+                                <rect key="frame" x="30" y="333.5" width="45.5" height="45.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5oM-aR-7RA" secondAttribute="height" multiplier="1:1" id="DFI-9g-byO"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ロゴ反転" translatesAutoresizingMaskIntoConstraints="NO" id="yiF-6Q-7F5">
+                                <rect key="frame" x="142.5" y="50" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yiF-6Q-7F5" secondAttribute="height" multiplier="1:1" id="JAN-mc-ohZ"/>
+                                    <constraint firstAttribute="width" constant="90" id="sLE-vk-nvk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="16V-Lb-Q2M" firstAttribute="leading" secondItem="PET-9R-puy" secondAttribute="leading" constant="20" id="0Nx-zZ-LeU"/>
+                            <constraint firstItem="16V-Lb-Q2M" firstAttribute="bottom" secondItem="0wm-20-yqx" secondAttribute="bottom" id="0ZV-WU-V8Q"/>
+                            <constraint firstItem="jcx-yy-pXh" firstAttribute="top" secondItem="wss-f5-AYR" secondAttribute="top" constant="7" id="1Uj-CG-zSq"/>
+                            <constraint firstItem="wss-f5-AYR" firstAttribute="bottom" secondItem="jcx-yy-pXh" secondAttribute="bottom" constant="7" id="36v-6c-CdG"/>
+                            <constraint firstItem="PET-9R-puy" firstAttribute="trailing" secondItem="16V-Lb-Q2M" secondAttribute="trailing" constant="20" id="7Tt-r5-LOr"/>
+                            <constraint firstItem="PET-9R-puy" firstAttribute="trailing" secondItem="cx0-w0-Ufr" secondAttribute="trailing" constant="20" id="7wH-aO-Us7"/>
+                            <constraint firstItem="FNF-NR-kDQ" firstAttribute="top" secondItem="wss-f5-AYR" secondAttribute="bottom" constant="15" id="88J-bc-3H0"/>
+                            <constraint firstItem="FNF-NR-kDQ" firstAttribute="leading" secondItem="PET-9R-puy" secondAttribute="leading" constant="20" id="CEm-lz-ju9"/>
+                            <constraint firstItem="yiF-6Q-7F5" firstAttribute="top" secondItem="PET-9R-puy" secondAttribute="top" constant="30" id="FhR-I9-LVR"/>
+                            <constraint firstItem="0wm-20-yqx" firstAttribute="top" secondItem="16V-Lb-Q2M" secondAttribute="top" id="Hz4-p2-hnM"/>
+                            <constraint firstItem="hZa-Ew-Vle" firstAttribute="centerX" secondItem="hzt-lx-pCQ" secondAttribute="centerX" id="IWf-2G-1yi"/>
+                            <constraint firstItem="hZa-Ew-Vle" firstAttribute="top" secondItem="yiF-6Q-7F5" secondAttribute="bottom" constant="10" id="KBi-Zk-Qhq"/>
+                            <constraint firstItem="5oM-aR-7RA" firstAttribute="top" secondItem="FNF-NR-kDQ" secondAttribute="top" id="No8-r5-YeL"/>
+                            <constraint firstItem="FNF-NR-kDQ" firstAttribute="bottom" secondItem="5oM-aR-7RA" secondAttribute="bottom" id="Oca-ly-JIt"/>
+                            <constraint firstItem="16V-Lb-Q2M" firstAttribute="top" secondItem="hZa-Ew-Vle" secondAttribute="bottom" constant="30" id="Ogh-1B-xZM"/>
+                            <constraint firstItem="jcx-yy-pXh" firstAttribute="leading" secondItem="wss-f5-AYR" secondAttribute="leading" constant="15" id="Tc3-jJ-CSM"/>
+                            <constraint firstItem="PET-9R-puy" firstAttribute="bottom" secondItem="cx0-w0-Ufr" secondAttribute="bottom" constant="45" id="Vva-JD-Kww"/>
+                            <constraint firstItem="yiF-6Q-7F5" firstAttribute="centerX" secondItem="hzt-lx-pCQ" secondAttribute="centerX" id="WpA-0o-Ko4"/>
+                            <constraint firstItem="PET-9R-puy" firstAttribute="trailing" secondItem="wss-f5-AYR" secondAttribute="trailing" constant="20" id="Xe4-BL-y7A"/>
+                            <constraint firstItem="5oM-aR-7RA" firstAttribute="width" secondItem="5oM-aR-7RA" secondAttribute="height" multiplier="1:1" id="bze-VJ-HpB"/>
+                            <constraint firstItem="jcx-yy-pXh" firstAttribute="width" secondItem="jcx-yy-pXh" secondAttribute="height" multiplier="1:1" id="bzp-42-3eY"/>
+                            <constraint firstItem="PET-9R-puy" firstAttribute="trailing" secondItem="FNF-NR-kDQ" secondAttribute="trailing" constant="20" id="hdo-L6-Cjm"/>
+                            <constraint firstItem="wss-f5-AYR" firstAttribute="top" secondItem="16V-Lb-Q2M" secondAttribute="bottom" constant="15" id="jne-QC-arD"/>
+                            <constraint firstItem="0wm-20-yqx" firstAttribute="leading" secondItem="16V-Lb-Q2M" secondAttribute="leading" constant="10" id="l3M-ud-vzp"/>
+                            <constraint firstItem="5oM-aR-7RA" firstAttribute="leading" secondItem="FNF-NR-kDQ" secondAttribute="leading" constant="10" id="n7L-pG-EdU"/>
+                            <constraint firstItem="cx0-w0-Ufr" firstAttribute="leading" secondItem="PET-9R-puy" secondAttribute="leading" constant="20" id="uOF-YE-dtR"/>
+                            <constraint firstItem="wss-f5-AYR" firstAttribute="leading" secondItem="PET-9R-puy" secondAttribute="leading" constant="20" id="w41-ji-lB0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PET-9R-puy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0J3-x3-1Vc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="58"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bmu-Pz-svy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="kH3-qU-cpJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tix-uZ-L9F">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yCY-sX-YDl" kind="relationship" relationship="rootViewController" id="q4Z-Gj-YiN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NbQ-BA-Hgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-268" y="-346"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="b9r-dY-qee">
+            <objects>
+                <viewController id="VZB-vc-xGl" customClass="LoginViewController" customModule="homeworks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jkj-uO-4v1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMn-gL-fjP" customClass="CustomButton" customModule="homeworks" customModuleProvider="target">
+                                <rect key="frame" x="20" y="577" width="335" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="CWk-8r-w7z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="戻る">
+                                    <color key="titleColor" red="0.92156862750000001" green="0.3803921569" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.92156862750000001" green="0.3803921569" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="back" destination="VZB-vc-xGl" eventType="touchUpInside" id="IzN-b0-GQE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ログイン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ype-QB-0hJ">
+                                <rect key="frame" x="130.5" y="150" width="114" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.92156862750000001" green="0.3803921569" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbU-MR-uOJ" customClass="CustomButton" customModule="homeworks" customModuleProvider="target">
+                                <rect key="frame" x="20" y="213.5" width="335" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.76470588240000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="K1k-Ce-xj6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="LINEでログイン">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="TxR-Ex-ZRC">
+                                <rect key="frame" x="30" y="214" width="44.5" height="44.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TxR-Ex-ZRC" secondAttribute="height" multiplier="1:1" id="SyE-H6-Zyu"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAP-VC-LbT" customClass="CustomButton" customModule="homeworks" customModuleProvider="target">
+                                <rect key="frame" x="20" y="273.5" width="335" height="45"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="uNe-b1-BaN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Facebookでログイン">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="facebook" destination="VZB-vc-xGl" eventType="touchUpInside" id="cAJ-Fd-4Yg"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="y1g-Ta-SaS">
+                                <rect key="frame" x="35" y="280.5" width="31" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="y1g-Ta-SaS" secondAttribute="height" multiplier="1:1" id="yi5-t1-AIt"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19p-8R-PVi" customClass="CustomButton" customModule="homeworks" customModuleProvider="target">
+                                <rect key="frame" x="20" y="333.5" width="335" height="45"/>
+                                <color key="backgroundColor" red="0.33333333329999998" green="0.67450980390000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="YvD-gn-KaQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Twitterでログイン">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="twitter" destination="VZB-vc-xGl" eventType="touchUpInside" id="rYU-9x-keY"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter" translatesAutoresizingMaskIntoConstraints="NO" id="xf2-8y-PXg">
+                                <rect key="frame" x="30" y="333.5" width="45.5" height="45.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xf2-8y-PXg" secondAttribute="height" multiplier="1:1" id="KLU-Hd-BV4"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ロゴ反転" translatesAutoresizingMaskIntoConstraints="NO" id="NH3-u8-05g">
+                                <rect key="frame" x="142.5" y="50" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="3uS-yX-Uci"/>
+                                    <constraint firstAttribute="width" secondItem="NH3-u8-05g" secondAttribute="height" multiplier="1:1" id="Hvb-WO-q8k"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fbU-MR-uOJ" firstAttribute="bottom" secondItem="TxR-Ex-ZRC" secondAttribute="bottom" id="0fU-dD-pbc"/>
+                            <constraint firstItem="19p-8R-PVi" firstAttribute="leading" secondItem="eYz-Ei-WgF" secondAttribute="leading" constant="20" id="3gX-ZF-30X"/>
+                            <constraint firstItem="eYz-Ei-WgF" firstAttribute="trailing" secondItem="19p-8R-PVi" secondAttribute="trailing" constant="20" id="4TS-Pm-xmc"/>
+                            <constraint firstItem="fbU-MR-uOJ" firstAttribute="leading" secondItem="eYz-Ei-WgF" secondAttribute="leading" constant="20" id="4ra-jR-8Kk"/>
+                            <constraint firstItem="TxR-Ex-ZRC" firstAttribute="top" secondItem="fbU-MR-uOJ" secondAttribute="top" id="55j-VR-9LM"/>
+                            <constraint firstItem="y1g-Ta-SaS" firstAttribute="top" secondItem="sAP-VC-LbT" secondAttribute="top" constant="7" id="6fu-60-o53"/>
+                            <constraint firstItem="NH3-u8-05g" firstAttribute="centerX" secondItem="Jkj-uO-4v1" secondAttribute="centerX" id="GyZ-C2-4mL"/>
+                            <constraint firstItem="sAP-VC-LbT" firstAttribute="top" secondItem="fbU-MR-uOJ" secondAttribute="bottom" constant="15" id="KuO-0y-56Q"/>
+                            <constraint firstItem="eYz-Ei-WgF" firstAttribute="trailing" secondItem="QMn-gL-fjP" secondAttribute="trailing" constant="20" id="L8q-bi-jo5"/>
+                            <constraint firstItem="y1g-Ta-SaS" firstAttribute="leading" secondItem="sAP-VC-LbT" secondAttribute="leading" constant="15" id="LTO-KW-XCC"/>
+                            <constraint firstItem="sAP-VC-LbT" firstAttribute="bottom" secondItem="y1g-Ta-SaS" secondAttribute="bottom" constant="7" id="Oj1-mS-jAd"/>
+                            <constraint firstItem="19p-8R-PVi" firstAttribute="bottom" secondItem="xf2-8y-PXg" secondAttribute="bottom" id="Rts-JF-7cF"/>
+                            <constraint firstItem="NH3-u8-05g" firstAttribute="top" secondItem="eYz-Ei-WgF" secondAttribute="top" constant="30" id="SWC-TM-rAe"/>
+                            <constraint firstItem="eYz-Ei-WgF" firstAttribute="bottom" secondItem="QMn-gL-fjP" secondAttribute="bottom" constant="45" id="XVs-GL-U0H"/>
+                            <constraint firstItem="eYz-Ei-WgF" firstAttribute="trailing" secondItem="sAP-VC-LbT" secondAttribute="trailing" constant="20" id="Xc4-EM-JKV"/>
+                            <constraint firstItem="ype-QB-0hJ" firstAttribute="top" secondItem="NH3-u8-05g" secondAttribute="bottom" constant="10" id="Zoh-UZ-gFv"/>
+                            <constraint firstItem="sAP-VC-LbT" firstAttribute="leading" secondItem="eYz-Ei-WgF" secondAttribute="leading" constant="20" id="Zvk-4a-FgH"/>
+                            <constraint firstItem="fbU-MR-uOJ" firstAttribute="top" secondItem="ype-QB-0hJ" secondAttribute="bottom" constant="30" id="c1C-mX-3kF"/>
+                            <constraint firstItem="xf2-8y-PXg" firstAttribute="leading" secondItem="19p-8R-PVi" secondAttribute="leading" constant="10" id="f5V-l8-Q3f"/>
+                            <constraint firstItem="y1g-Ta-SaS" firstAttribute="width" secondItem="y1g-Ta-SaS" secondAttribute="height" multiplier="1:1" id="gNh-jK-ujl"/>
+                            <constraint firstItem="TxR-Ex-ZRC" firstAttribute="leading" secondItem="fbU-MR-uOJ" secondAttribute="leading" constant="10" id="gpn-2v-wRF"/>
+                            <constraint firstItem="19p-8R-PVi" firstAttribute="top" secondItem="sAP-VC-LbT" secondAttribute="bottom" constant="15" id="gwW-8m-IEg"/>
+                            <constraint firstItem="eYz-Ei-WgF" firstAttribute="trailing" secondItem="fbU-MR-uOJ" secondAttribute="trailing" constant="20" id="hMq-0R-yVI"/>
+                            <constraint firstItem="ype-QB-0hJ" firstAttribute="centerX" secondItem="Jkj-uO-4v1" secondAttribute="centerX" id="r3l-4t-nuT"/>
+                            <constraint firstItem="xf2-8y-PXg" firstAttribute="top" secondItem="19p-8R-PVi" secondAttribute="top" id="t72-ug-AmE"/>
+                            <constraint firstItem="QMn-gL-fjP" firstAttribute="leading" secondItem="eYz-Ei-WgF" secondAttribute="leading" constant="20" id="tIn-Ak-lTH"/>
+                            <constraint firstItem="xf2-8y-PXg" firstAttribute="width" secondItem="xf2-8y-PXg" secondAttribute="height" multiplier="1:1" id="tm0-NN-GPG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eYz-Ei-WgF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wa5-Ac-GtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1570" y="-623"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Twitter" width="44" height="44"/>
+        <image name="facebook" width="44" height="44"/>
+        <image name="line" width="44" height="44"/>
+        <image name="ロゴ" width="200" height="200"/>
+        <image name="ロゴ反転" width="200" height="200"/>
+    </resources>
 </document>
